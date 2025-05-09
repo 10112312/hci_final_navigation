@@ -8,55 +8,42 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             NavigationView {
-                GoogleMapView()
-                    .navigationTitle("导航")
+                MapView()
+                    .navigationTitle("Navigation")
             }
             .tabItem {
                 Image(systemName: "map")
-                Text("导航")
+//                Text("Navigation")
             }
             .tag(0)
             
             NavigationView {
                 CommunityView()
-                    .navigationTitle("社区")
+                    .navigationTitle("Community")
             }
             .tabItem {
                 Image(systemName: "person.3")
-                Text("社区")
+                Text("Community")
             }
             .tag(1)
             
             NavigationView {
                 ProfileView()
-                    .navigationTitle("我的")
+                    .navigationTitle("Profile")
             }
             .tabItem {
                 Image(systemName: "person.circle")
-                Text("我的")
+                Text("Profile")
             }
             .tag(2)
         }
     }
 }
 
-struct GoogleMapView: UIViewRepresentable {
-    @StateObject private var mapManager = MapManager()
-    
-    func makeUIView(context: Context) -> GMSMapView {
-        let camera = GMSCameraPosition.camera(withLatitude: 31.2304, longitude: 121.4737, zoom: 12)
-        let mapView = GMSMapView(frame: .zero, camera: camera)
-        mapManager.mapView = mapView
-        return mapView
-    }
-    
-    func updateUIView(_ uiView: GMSMapView, context: Context) {}
-}
-
 struct ProfileView: View {
     var body: some View {
         List {
-            Section(header: Text("个人信息")) {
+            Section(header: Text("Personal Information")) {
                 HStack {
                     Image(systemName: "person.circle.fill")
                         .resizable()
@@ -64,9 +51,9 @@ struct ProfileView: View {
                         .foregroundColor(.blue)
                     
                     VStack(alignment: .leading) {
-                        Text("用户名")
+                        Text("Username")
                             .font(.headline)
-                        Text("个人简介")
+                        Text("Bio")
                             .font(.subheadline)
                             .foregroundColor(.gray)
                     }
@@ -74,24 +61,24 @@ struct ProfileView: View {
                 .padding(.vertical, 8)
             }
             
-            Section(header: Text("设置")) {
-                NavigationLink(destination: Text("个人资料")) {
-                    Label("个人资料", systemImage: "person")
+            Section(header: Text("Settings")) {
+                NavigationLink(destination: Text("Profile Settings")) {
+                    Label("Profile Settings", systemImage: "person")
                 }
-                NavigationLink(destination: Text("通知设置")) {
-                    Label("通知设置", systemImage: "bell")
+                NavigationLink(destination: Text("Notification Settings")) {
+                    Label("Notification Settings", systemImage: "bell")
                 }
-                NavigationLink(destination: Text("隐私设置")) {
-                    Label("隐私设置", systemImage: "lock")
+                NavigationLink(destination: Text("Privacy Settings")) {
+                    Label("Privacy Settings", systemImage: "lock")
                 }
             }
             
-            Section(header: Text("其他")) {
-                NavigationLink(destination: Text("关于我们")) {
-                    Label("关于我们", systemImage: "info.circle")
+            Section(header: Text("Other")) {
+                NavigationLink(destination: Text("About Us")) {
+                    Label("About Us", systemImage: "info.circle")
                 }
-                NavigationLink(destination: Text("帮助中心")) {
-                    Label("帮助中心", systemImage: "questionmark.circle")
+                NavigationLink(destination: Text("Help Center")) {
+                    Label("Help Center", systemImage: "questionmark.circle")
                 }
             }
         }

@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-hci_final_navigation/Pods-hci_final_navigation-resources.sh
+${PODS_CONFIGURATION_BUILD_DIR}/GoogleMaps/GoogleMapsResources.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/GooglePlaces/GooglePlacesResources.bundle

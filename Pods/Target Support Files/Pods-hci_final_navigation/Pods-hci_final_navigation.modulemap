@@ -1,0 +1,6 @@
+framework module Pods_hci_final_navigation {
+  umbrella header "Pods-hci_final_navigation-umbrella.h"
+
+  export *
+  module * { export * }
+}

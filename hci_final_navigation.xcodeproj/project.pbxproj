@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		92918DF876C414C8A653EDE6 /* Pods_hci_final_navigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C7FAA800276451A9AFD99C /* Pods_hci_final_navigation.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		1CFAB64B2DCDE24800C64FFC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,11 +31,27 @@
 		1CFAB63D2DCDE24500C64FFC /* hci_final_navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hci_final_navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CFAB64A2DCDE24800C64FFC /* hci_final_navigationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hci_final_navigationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CFAB6542DCDE24800C64FFC /* hci_final_navigationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hci_final_navigationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		95C7FAA800276451A9AFD99C /* Pods_hci_final_navigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hci_final_navigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		979BC7FF2C760A82EEAEC634 /* Pods-hci_final_navigation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hci_final_navigation.debug.xcconfig"; path = "Target Support Files/Pods-hci_final_navigation/Pods-hci_final_navigation.debug.xcconfig"; sourceTree = "<group>"; };
+		B7F6860DB7C0C4A078FA9717 /* Pods-hci_final_navigation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hci_final_navigation.release.xcconfig"; path = "Target Support Files/Pods-hci_final_navigation/Pods-hci_final_navigation.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		1CDB48C62DCDFBE70068221F /* Exceptions for "hci_final_navigation" folder in "hci_final_navigation" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				hci_final_navigation/Info.plist,
+			);
+			target = 1CFAB63C2DCDE24500C64FFC /* hci_final_navigation */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1CFAB63F2DCDE24500C64FFC /* hci_final_navigation */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				1CDB48C62DCDFBE70068221F /* Exceptions for "hci_final_navigation" folder in "hci_final_navigation" target */,
+			);
 			path = hci_final_navigation;
 			sourceTree = "<group>";
 		};
@@ -52,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92918DF876C414C8A653EDE6 /* Pods_hci_final_navigation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +93,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1196925AE651156B64F06C9D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				979BC7FF2C760A82EEAEC634 /* Pods-hci_final_navigation.debug.xcconfig */,
+				B7F6860DB7C0C4A078FA9717 /* Pods-hci_final_navigation.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		1CFAB6342DCDE24500C64FFC = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +109,8 @@
 				1CFAB64D2DCDE24800C64FFC /* hci_final_navigationTests */,
 				1CFAB6572DCDE24800C64FFC /* hci_final_navigationUITests */,
 				1CFAB63E2DCDE24500C64FFC /* Products */,
+				1196925AE651156B64F06C9D /* Pods */,
+				B1398283FD1DA077FCF6B1F2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +124,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B1398283FD1DA077FCF6B1F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95C7FAA800276451A9AFD99C /* Pods_hci_final_navigation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -99,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1CFAB65E2DCDE24800C64FFC /* Build configuration list for PBXNativeTarget "hci_final_navigation" */;
 			buildPhases = (
+				996841AEFD0EABDA27910197 /* [CP] Check Pods Manifest.lock */,
 				1CFAB6392DCDE24500C64FFC /* Sources */,
 				1CFAB63A2DCDE24500C64FFC /* Frameworks */,
 				1CFAB63B2DCDE24500C64FFC /* Resources */,
+				000EE953DBCBC14E3E1ABE0B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -111,8 +153,6 @@
 				1CFAB63F2DCDE24500C64FFC /* hci_final_navigation */,
 			);
 			name = hci_final_navigation;
-			packageProductDependencies = (
-			);
 			productName = hci_final_navigation;
 			productReference = 1CFAB63D2DCDE24500C64FFC /* hci_final_navigation.app */;
 			productType = "com.apple.product-type.application";
@@ -134,8 +174,6 @@
 				1CFAB64D2DCDE24800C64FFC /* hci_final_navigationTests */,
 			);
 			name = hci_final_navigationTests;
-			packageProductDependencies = (
-			);
 			productName = hci_final_navigationTests;
 			productReference = 1CFAB64A2DCDE24800C64FFC /* hci_final_navigationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -157,8 +195,6 @@
 				1CFAB6572DCDE24800C64FFC /* hci_final_navigationUITests */,
 			);
 			name = hci_final_navigationUITests;
-			packageProductDependencies = (
-			);
 			productName = hci_final_navigationUITests;
 			productReference = 1CFAB6542DCDE24800C64FFC /* hci_final_navigationUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -230,6 +266,52 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		000EE953DBCBC14E3E1ABE0B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hci_final_navigation/Pods-hci_final_navigation-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hci_final_navigation/Pods-hci_final_navigation-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hci_final_navigation/Pods-hci_final_navigation-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		996841AEFD0EABDA27910197 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hci_final_navigation-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1CFAB6392DCDE24500C64FFC /* Sources */ = {
@@ -392,6 +474,7 @@
 		};
 		1CFAB65F2DCDE24800C64FFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 979BC7FF2C760A82EEAEC634 /* Pods-hci_final_navigation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -399,12 +482,15 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 57NXN422A5;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = hci_final_navigation/hci_final_navigation/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -420,6 +506,7 @@
 		};
 		1CFAB6602DCDE24800C64FFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7F6860DB7C0C4A078FA9717 /* Pods-hci_final_navigation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -427,12 +514,15 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 57NXN422A5;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = hci_final_navigation/hci_final_navigation/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -491,6 +581,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 57NXN422A5;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "hci-vkl.hci-final-navigationUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -508,6 +599,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 57NXN422A5;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "hci-vkl.hci-final-navigationUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
