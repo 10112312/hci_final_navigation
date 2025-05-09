@@ -9,11 +9,20 @@ struct ContentView: View {
         TabView(selection: $selectedTab) {
             NavigationView {
                 MapView()
-                    .navigationTitle("Navigation")
+                    .navigationTitle("")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            Text("Navigation")
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                    }
             }
             .tabItem {
                 Image(systemName: "map")
-//                Text("Navigation")
+                Text("Navigation")
             }
             .tag(0)
             

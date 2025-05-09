@@ -40,5 +40,10 @@
 	<string>需要访问您的位置以提供导航和充电站信息</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>需要访问您的位置以提供实时导航和充电站信息</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
