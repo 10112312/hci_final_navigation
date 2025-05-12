@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useGeolocation } from '../hooks/useGeolocation';
 import { searchLocations } from '../services/locationService';
+import debounce from 'lodash/debounce';
 
 interface SearchBarProps {
     onLocationSelect: (location: Location) => void;
@@ -28,14 +29,36 @@ const SearchBar: React.FC<SearchBarProps> = ({
     const searchRef = useRef<HTMLDivElement>(null);
     const { location: currentLocation, error: locationError } = useGeolocation();
 
+    // 使用防抖处理搜索
+    const debouncedSearch = useCallback(
+        debounce(async (value: string) => {
+            if (value.length < 2) {
+                setSuggestions([]);
+                return;
+            }
+
+            setIsLoading(true);
+            try {
+                const results = await searchLocations(value);
+                setSuggestions(results);
+                setShowSuggestions(true);
+            } catch (error) {
+                console.error('Location search failed:', error);
+            } finally {
+                setIsLoading(false);
+            }
+        }, 300),
+        []
+    );
+
     useEffect(() => {
         // 如果是起始点且有当前位置，自动填充
         if (isStartPoint && currentLocation) {
-            setQuery('当前位置');
+            setQuery('Current Location');
             onLocationSelect({
                 id: 'current',
-                name: '当前位置',
-                address: '当前位置',
+                name: 'Current Location',
+                address: 'Current Location',
                 lat: currentLocation.latitude,
                 lng: currentLocation.longitude
             });
@@ -53,23 +76,9 @@ const SearchBar: React.FC<SearchBarProps> = ({
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
-    const handleSearch = async (value: string) => {
+    const handleSearch = (value: string) => {
         setQuery(value);
-        if (value.length < 2) {
-            setSuggestions([]);
-            return;
-        }
-
-        setIsLoading(true);
-        try {
-            const results = await searchLocations(value);
-            setSuggestions(results);
-            setShowSuggestions(true);
-        } catch (error) {
-            console.error('搜索位置失败:', error);
-        } finally {
-            setIsLoading(false);
-        }
+        debouncedSearch(value);
     };
 
     const handleSelect = (location: Location) => {
@@ -96,7 +105,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
             </div>
 
             {showSuggestions && suggestions.length > 0 && (
-                <div className="absolute z-10 w-full mt-1 bg-white rounded-lg shadow-lg border border-gray-200">
+                <div className="absolute z-10 w-full mt-1 bg-white rounded-lg shadow-lg border border-gray-200 max-h-60 overflow-y-auto">
                     {suggestions.map((location) => (
                         <div
                             key={location.id}
@@ -112,7 +121,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
             {locationError && isStartPoint && (
                 <div className="text-red-500 text-sm mt-1">
-                    无法获取当前位置，请检查位置权限设置
+                    Unable to get current location. Please check location permissions.
                 </div>
             )}
         </div>

@@ -29,8 +29,7 @@ export const searchLocations = async (query: string): Promise<Location[]> => {
                 params: {
                     key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
                     input: query,
-                    language: 'zh-CN',
-                    components: 'country:cn'
+                    language: 'en-US'
                 }
             }
         );
@@ -53,7 +52,7 @@ export const searchLocations = async (query: string): Promise<Location[]> => {
         }
         return [];
     } catch (error) {
-        console.error('位置搜索失败:', error);
+        console.error('Location search failed:', error);
         return [];
     }
 };
@@ -143,9 +142,9 @@ const searchChargingStations = async (route: any): Promise<ChargingStation[]> =>
                 params: {
                     key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
                     location: `${route.legs[0].start_location.lat},${route.legs[0].start_location.lng}`,
-                    keyword: '充电站',
+                    keyword: 'tesla supercharger',
                     radius: 5000,
-                    language: 'zh-CN'
+                    language: 'en-US'
                 }
             }
         );
@@ -157,15 +156,15 @@ const searchChargingStations = async (route: any): Promise<ChargingStation[]> =>
                 address: place.vicinity,
                 lat: place.geometry.location.lat,
                 lng: place.geometry.location.lng,
-                available: true, // 需要实时查询
-                power: 60, // 需要从充电站 API 获取
-                type: '快充', // 需要从充电站 API 获取
-                price: 1.5 // 需要从充电站 API 获取
+                available: true,
+                power: 150, // Tesla Supercharger power in kW
+                type: 'Supercharger',
+                price: 0 // Tesla Supercharger price varies by location
             }));
         }
         return [];
     } catch (error) {
-        console.error('搜索充电站失败:', error);
+        console.error('Charging station search failed:', error);
         return [];
     }
 };
